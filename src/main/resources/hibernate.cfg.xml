@@ -17,11 +17,13 @@
         <property name="format_sql">true</property>
         <property name="use_sql_comments">true</property>
 
-        <mapping class="car.Car"/>
-        <mapping class="car.ModelCar"/>
+<!--        <mapping class="car.Car"/>-->
+<!--        <mapping class="car.ModelCar"/>-->
         <mapping class="manytomany.Person"/>
         <mapping class="manytomany.Address"/>
         <mapping class="books.Author"/>
         <mapping class="books.Book"/>
+        <mapping class="lazyInitializationexception.Mark"/>
+        <mapping class="lazyInitializationexception.ModelCar"/>
     </session-factory>
 </hibernate-configuration>
