@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "candidates")
+@Table(name = "candidatesNew")
 public class Candidate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,6 +15,10 @@ public class Candidate {
     private int experience;
 
     private double salary;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "baseVac_id")
+    private BaseVac baseVac;
 
     public static Candidate of(String name, int experience, double salary) {
         Candidate candidate = new Candidate();
@@ -56,19 +60,25 @@ public class Candidate {
         this.salary = salary;
     }
 
+    public BaseVac getBaseVac() {
+        return baseVac;
+    }
+
+    public void setBaseVac(BaseVac baseVac) {
+        this.baseVac = baseVac;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Candidate candidate = (Candidate) o;
-        return id == candidate.id && experience == candidate.experience
-                && Double.compare(candidate.salary, salary) == 0
-                && Objects.equals(name, candidate.name);
+        return id == candidate.id && experience == candidate.experience && Double.compare(candidate.salary, salary) == 0 && Objects.equals(name, candidate.name) && Objects.equals(baseVac, candidate.baseVac);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, experience, salary);
+        return Objects.hash(id, name, experience, salary, baseVac);
     }
 
     @Override
@@ -78,6 +88,7 @@ public class Candidate {
                 ", name='" + name + '\'' +
                 ", experience=" + experience +
                 ", salary=" + salary +
+                ", baseVac=" + baseVac +
                 '}';
     }
 }

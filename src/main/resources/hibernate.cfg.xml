@@ -22,11 +22,16 @@
 <!--        <mapping class="car.ModelCar"/>-->
         <mapping class="manytomany.Person"/>
         <mapping class="manytomany.Address"/>
-        <mapping class="books.Author"/>
-        <mapping class="books.Book"/>
+<!--        <mapping class="books.Author"/>-->
+<!--        <mapping class="books.Book"/>-->
         <mapping class="lazyInitializationexception.Mark"/>
         <mapping class="lazyInitializationexception.ModelCar"/>
         <mapping class="date.Product"/>
         <mapping class="students.Candidate"/>
+        <mapping class="students.BaseVac"/>
+        <mapping class="students.Vac"/>
+        <mapping class="students.Student"/>
+        <mapping class="students.Book"/>
+        <mapping class="students.Account"/>
     </session-factory>
 </hibernate-configuration>
