@@ -73,7 +73,10 @@ public class Candidate {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Candidate candidate = (Candidate) o;
-        return id == candidate.id && experience == candidate.experience && Double.compare(candidate.salary, salary) == 0 && Objects.equals(name, candidate.name) && Objects.equals(baseVac, candidate.baseVac);
+        return id == candidate.id && experience == candidate.experience
+                && Double.compare(candidate.salary, salary) == 0
+                && Objects.equals(name, candidate.name)
+                && Objects.equals(baseVac, candidate.baseVac);
     }
 
     @Override

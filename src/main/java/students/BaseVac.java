@@ -12,7 +12,7 @@ public class BaseVac {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    String name;
+    private String name;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Vac> vacs = new ArrayList<>();
